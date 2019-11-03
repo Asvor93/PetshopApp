@@ -1,0 +1,25 @@
+<form [formGroup]="ownerForm" (ngSubmit)="save()">
+  <label>First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <label>Address:
+    <input type="text" formControlName="address">
+  </label>
+
+  <label>Phone Number:
+    <input type="text" formControlName="phoneNumber">
+  </label>
+
+  <label>Email:
+    <input type="text" formControlName="email">
+  </label>
+
+  <button type="submit">Save</button>
+</form>
+
+<button routerLink="/owners">Back</button>

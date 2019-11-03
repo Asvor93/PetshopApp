@@ -1,0 +1,10 @@
+<h1>Owner details</h1>
+<div *ngIf="owner">
+  <h2>{{owner.Id}}</h2>
+  <h3>{{owner.FirstName}} {{owner.LastName}}</h3>
+  <h4>{{owner.Address}}</h4>
+</div>
+<div *ngIf="!owner">
+  <h2>Owner not found!</h2>
+</div>
+<button routerLink="/owners">Back</button>

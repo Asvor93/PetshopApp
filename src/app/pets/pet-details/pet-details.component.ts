@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IPet} from '../shared/ipet';
+import {Pet} from '../shared/Pet';
 import {PetService} from '../shared/pet.service';
 import {ActivatedRoute} from '@angular/router';
 
@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./pet-details.component.css']
 })
 export class PetDetailsComponent implements OnInit {
-pet: IPet;
+pet: Pet;
 
   constructor(private petService: PetService, private route: ActivatedRoute) { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IPet} from '../shared/ipet';
+import {Pet} from '../shared/Pet';
 import {PetService} from '../shared/pet.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {PetService} from '../shared/pet.service';
   styleUrls: ['./pet-list.component.css']
 })
 export class PetListComponent implements OnInit {
-  pets: IPet[];
+  pets: Pet[];
 
   constructor(private petService: PetService) {
   }

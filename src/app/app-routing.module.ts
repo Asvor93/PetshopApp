@@ -12,10 +12,10 @@ import {OwnerUpdateComponent} from './owners/owner-update/owner-update.component
 import {OwnerDetailsComponent} from './owners/owner-details/owner-details.component';
 
 const routes: Routes = [
-  {path: 'pets/:id', component: PetDetailsComponent},
-  {path: 'pet-update/:id', component: PetUpdateComponent},
-  {path: 'pets-add', component: PetAddComponent},
   {path: 'pets', component: PetListComponent},
+  {path: 'pets-add', component: PetAddComponent},
+  {path: 'pet-update/:id', component: PetUpdateComponent},
+  {path: 'pets/:id', component: PetDetailsComponent},
   {path: '', component: WelcomeComponent},
   {path: 'owners', component: OwnerListComponent},
   {path: 'owner-add', component: OwnerAddComponent},

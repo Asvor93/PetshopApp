@@ -23,11 +23,11 @@ export class PetUpdateComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('id');
     const pet = this.petService.getPetById(this.id).subscribe(petFromRest => {
       this.petForm.patchValue({
-        Name: petFromRest.Name,
-        PetType: petFromRest.PetType,
-        BirthDate: petFromRest.BirthDate,
-        SoldDate: petFromRest.SoldDate,
-        Price: petFromRest.Price
+        Name: petFromRest.name,
+        PetType: petFromRest.petType,
+        BirthDate: petFromRest.birthDate,
+        SoldDate: petFromRest.soldDate,
+        Price: petFromRest.price
       });
     });
   }

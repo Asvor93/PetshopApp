@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {IPet} from './ipet';
+import {Pet} from './Pet';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -10,17 +10,17 @@ export class PetService {
   apiUrl = 'https://peetshopar.azurewebsites.net/api/pets';
   constructor(private http: HttpClient) {}
 
-  getPets(): Observable<IPet[]> {
-   return this.http.get<IPet[]>(this.apiUrl);
+  getPets(): Observable<Pet[]> {
+   return this.http.get<Pet[]>(this.apiUrl);
   }
-  addPet(pet: IPet): Observable<IPet> {
-    return this.http.post<IPet>(this.apiUrl, pet);
+  addPet(pet: Pet): Observable<Pet> {
+    return this.http.post<Pet>(this.apiUrl, pet);
   }
-  getPetById(id: number): Observable<IPet> {
-    return this.http.get<IPet>(this.apiUrl + '/' + id);
+  getPetById(id: number): Observable<Pet> {
+    return this.http.get<Pet>(this.apiUrl + '/' + id);
   }
-  updatePet(pet: IPet): Observable<IPet> {
-    return this.http.put<IPet>(this.apiUrl + '/' + pet.Id, pet);
+  updatePet(pet: Pet): Observable<Pet> {
+    return this.http.put<Pet>(this.apiUrl + '/' + pet.id, pet);
   }
   deletePet(id: number): Observable<any> {
   return this.http.delete(this.apiUrl + '/' + id);

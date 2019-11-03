@@ -23,11 +23,11 @@ export class OwnerUpdateComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.ownerService.getOwnerById(this.id).subscribe(ownerFromRest => {
       this.ownerForm.patchValue({
-        firstName: ownerFromRest.FirstName,
-        lastName: ownerFromRest.LastName,
-        address: ownerFromRest.Address,
-        phoneNumber: ownerFromRest.PhoneNumber,
-        email: ownerFromRest.PhoneNumber
+        firstName: ownerFromRest.firstName,
+        lastName: ownerFromRest.lastName,
+        address: ownerFromRest.address,
+        phoneNumber: ownerFromRest.phoneNumber,
+        email: ownerFromRest.phoneNumber
       });
     });
   }

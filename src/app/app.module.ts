@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { PetComponent } from './pets/pet/pet.component';
 import { PetListComponent } from './pets/pet-list/pet-list.component';
@@ -18,6 +17,8 @@ import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
 import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
 import { OwnerDetailsComponent } from './owners/owner-details/owner-details.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './shared/login/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,12 +35,14 @@ import {HttpClientModule} from '@angular/common/http';
     OwnerAddComponent,
     OwnerUpdateComponent,
     OwnerDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   exports: [
     RouterModule

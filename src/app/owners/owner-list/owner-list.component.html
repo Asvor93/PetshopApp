@@ -5,5 +5,5 @@
     <button (click)="delete(owner.id)">Delete</button>
   </li>
 </ul>
-<h2 *ngIf="!owners">Loading!</h2>
-<button routerLink="/owner-add">Add Owner</button>
+<h2 *ngIf="!owners"><mat-spinner></mat-spinner></h2>
+<button mat-raised-button routerLink="/owner-add">Add Owner</button>

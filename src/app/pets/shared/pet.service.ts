@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
 import {Pet} from './Pet';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {AuthenticationService} from '../../shared/services/authentication.service';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    Authorization: 'my-auth-token'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetService {
   apiUrl = 'https://peetshopar.azurewebsites.net/api/pets';
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authenticationService: AuthenticationService) {}
 
   getPets(): Observable<Pet[]> {
-   return this.http.get<Pet[]>(this.apiUrl);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer' + this.authenticationService.getToken());
+   return this.http.get<Pet[]>(this.apiUrl, httpOptions);
   }
   addPet(pet: Pet): Observable<Pet> {
     return this.http.post<Pet>(this.apiUrl, pet);

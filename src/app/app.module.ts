@@ -19,6 +19,9 @@ import { OwnerDetailsComponent } from './owners/owner-details/owner-details.comp
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './shared/login/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatListModule, MatProgressSpinnerModule} from '@angular/material';
+import {AuthenticationService} from './shared/services/authentication.service';
+import {AuthGuard} from './authGuard';
 
 @NgModule({
   declarations: [
@@ -42,12 +45,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     RouterModule
   ],
-  providers: [],
+  providers: [AuthenticationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

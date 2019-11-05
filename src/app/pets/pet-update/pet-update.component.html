@@ -1,25 +1,36 @@
+<h1>Update Pet</h1>
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-card fxFlex="33">
+
 <form [formGroup]="petForm" (ngSubmit)="save()">
-  <label>Name:
-    <input type="text" formControlName="Name">
-  </label>
+  <div fxLayout="column">
 
-  <label>Pet Type:
-    <input type="text" formControlName="PetType">
-  </label>
+  <mat-form-field>
+    <input matInput placeholder="Name" formControlName="Name">
+  </mat-form-field>
 
-  <label>Birth Date:
-    <input type="text" formControlName="BirthDate">
-  </label>
+  <mat-form-field>
+    <input matInput placeholder="Pet Type" formControlName="PetType">
+  </mat-form-field>
 
-  <label>Sold Date:
-    <input type="text" formControlName="SoldDate">
-  </label>
+  <mat-form-field>
+    <input matInput placeholder="Birth Date" formControlName="BirthDate">
+  </mat-form-field>
 
-  <label>Price:
-    <input type="text" formControlName="Price">
-  </label>
+  <mat-form-field>
+    <input matInput placeholder="Sold Date" formControlName="SoldDate">
+  </mat-form-field>
 
-  <button type="submit">Save</button>
+  <mat-form-field>
+    <input matInput placeholder="Price:" formControlName="Price">
+  </mat-form-field>
+    <button style="position: absolute; right: 15px" mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+
+
+
 </form>
-
-<button routerLink="/pets">Back</button>
+  </mat-card>
+</div>
+<button style="position: absolute; right: 15px" mat-raised-button color="primary" routerLink="/pets">Back</button>

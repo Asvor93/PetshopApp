@@ -19,19 +19,23 @@ export class PetService {
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) {}
 
   getPets(): Observable<Pet[]> {
-    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer' + this.authenticationService.getToken());
-   return this.http.get<Pet[]>(this.apiUrl, httpOptions);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Pet[]>(this.apiUrl, httpOptions);
   }
   addPet(pet: Pet): Observable<Pet> {
-    return this.http.post<Pet>(this.apiUrl, pet);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.post<Pet>(this.apiUrl, pet, httpOptions);
   }
   getPetById(id: number): Observable<Pet> {
-    return this.http.get<Pet>(this.apiUrl + '/' + id);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Pet>(this.apiUrl + '/' + id, httpOptions);
   }
   updatePet(pet: Pet): Observable<Pet> {
-    return this.http.put<Pet>(this.apiUrl + '/' + pet.id, pet);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.put<Pet>(this.apiUrl + '/' + pet.id, pet, httpOptions);
   }
   deletePet(id: number): Observable<any> {
-  return this.http.delete(this.apiUrl + '/' + id);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+  return this.http.delete(this.apiUrl + '/' + id, httpOptions);
   }
 }

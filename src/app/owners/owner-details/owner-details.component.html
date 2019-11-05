@@ -1,10 +1,16 @@
-<h1>Owner details</h1>
+<h1>Owner Details</h1>
 <div *ngIf="owner">
-  <h2>{{owner.Id}}</h2>
-  <h3>{{owner.FirstName}} {{owner.LastName}}</h3>
-  <h4>{{owner.Address}}</h4>
+  <mat-card>
+    <mat-card-content>
+      <p>Id: {{owner.id}}</p>
+      <p>Name: {{owner.firstName}} {{owner.lastName}}</p>
+      <p>Address: {{owner.address}}</p>
+      <p>Email: {{owner.email}}</p>
+      <p>Phone number:{{owner.phoneNumber}}</p>
+    </mat-card-content>
+  </mat-card>
 </div>
 <div *ngIf="!owner">
   <h2>Owner not found!</h2>
 </div>
-<button routerLink="/owners">Back</button>
+<button style="position: absolute; right: 15px" mat-raised-button color="primary" routerLink="/owners">Back</button>

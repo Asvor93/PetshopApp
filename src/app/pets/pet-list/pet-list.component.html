@@ -1,9 +1,23 @@
-<ul mat-list-icon *ngIf="pets">
-  <li *ngFor="let pet of pets">
-  <a routerLink="/pets/{{pet.id}}">{{pet.name}} {{pet.petType}}</a>
-    <button routerLink="/pet-update/{{pet.id}}">Update</button>
-    <button mat-button (click)="delete(pet.id)">Delete</button>
-  </li>
-</ul>
-<h2  *ngIf="!pets"><mat-spinner></mat-spinner> </h2>
-<button mat-raised-button routerLink="/pets-add">Add Pet</button>
+
+<h1>Pet Overview</h1>
+
+<div *ngFor="let pet of pets">
+  <mat-card>
+    <mat-card-content>
+      <div>Name: {{pet.name}} Type: {{pet.petType}}</div>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutGap="30px">
+      <span fxFlex></span>
+      <button mat-raised-button color="primary"  routerLink="/pets/{{pet.id}}">
+        Details</button>
+      <button mat-raised-button color="primary"  routerLink="/pet-update/{{pet.id}}">Update</button>
+      <button mat-raised-button color="primary"  (click)="delete(pet.id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<h4 *ngIf="!pets"
+    fxFill
+    fxLayoutAlign="center center">
+  <mat-spinner></mat-spinner>
+</h4>
+<button style="position: absolute; right: 15px" mat-raised-button color="primary" routerLink="/pets-add">Add Pet</button>

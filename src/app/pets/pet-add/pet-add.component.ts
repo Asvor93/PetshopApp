@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PetService} from '../shared/pet.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
+import {Pet} from '../shared/Pet';
 
 @Component({
   selector: 'app-pet-add',
@@ -11,11 +12,11 @@ import {Router} from '@angular/router';
 export class PetAddComponent implements OnInit {
 
   petForm = new FormGroup({
-    Name: new FormControl(''),
-    PetType: new  FormControl(''),
-    BirthDate: new FormControl(''),
-    SoldDate: new FormControl(''),
-    Price: new FormControl('')
+    name: new FormControl(''),
+    petType: new  FormControl(''),
+    birthDate: new FormControl(''),
+    soldDate: new FormControl(''),
+    price: new FormControl('')
   });
   constructor(private petService: PetService, private router: Router) { }
 

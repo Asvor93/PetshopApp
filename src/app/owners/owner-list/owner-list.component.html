@@ -1,9 +1,21 @@
-<ul *ngIf="owners">
-  <li *ngFor="let owner of owners">
-    <a routerLink="/owners/{{owner.id}}">{{owner.firstName}} {{owner.lastName}}</a>
-    <button routerLink="/owner-update/{{owner.id}}">Update</button>
-    <button (click)="delete(owner.id)">Delete</button>
-  </li>
-</ul>
-<h2 *ngIf="!owners"><mat-spinner></mat-spinner></h2>
-<button mat-raised-button routerLink="/owner-add">Add Owner</button>
+<h1>Owner Overview</h1>
+
+<div *ngFor="let owner of owners">
+  <mat-card>
+    <mat-card-content>
+      <div>{{owner.firstName}} {{owner.lastName}} Email: {{owner.email}}</div>
+    </mat-card-content>
+    <mat-card-actions fxLayout="row" fxLayoutGap="30px">
+      <span fxFlex></span>
+      <button mat-raised-button color="primary"  routerLink="/owners/{{owner.id}}">
+        Details</button>
+      <button mat-raised-button color="primary"  routerLink="/pet-update/{{owner.id}}">Update</button>
+      <button mat-raised-button color="primary" (click)="delete(owner.id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<h4 *ngIf="!owners" fxLayoutAlign="center center">
+  <mat-spinner></mat-spinner>
+</h4>
+<button style="position: absolute; right: 15px" mat-raised-button color="primary" routerLink="/owner-add">Add Owner</button>
+

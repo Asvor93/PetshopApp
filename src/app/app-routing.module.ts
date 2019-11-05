@@ -14,7 +14,7 @@ import {AuthGuard} from './authGuard';
 import {LoginComponent} from './shared/login/login/login.component';
 
 const routes: Routes = [
-  {path: 'pets', component: PetListComponent},
+  {path: 'pets', component: PetListComponent, canActivate: [AuthGuard]},
   {path: 'pets-add', component: PetAddComponent},
   {path: 'pet-update/:id', component: PetUpdateComponent},
   {path: 'pets/:id', component: PetDetailsComponent},

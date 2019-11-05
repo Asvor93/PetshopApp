@@ -1,28 +1,38 @@
-<p>owner-add works!</p>
-<form [formGroup]="ownerForm" (ngSubmit)="save()">
-  <label>First Name:
-    <input type="text" formControlName="FirstName">
-  </label>
+<h1>Add Owner</h1>
 
-  <label>Last Name:
-    <input type="text" formControlName="LastName">
-  </label>
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-card fxFlex="33">
+    <form [formGroup]="ownerForm" (ngSubmit)="save()">
+      <div fxLayout="column">
 
-  <label>Address:
-    <input type="text" formControlName="Address">
-  </label>
+        <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="FirstName">
+        </mat-form-field>
 
-  <label>Phone Number:
-    <input type="text" formControlName="PhoneNumber">
-  </label>
+        <mat-form-field>
+        <input matInput placeholder="Last name" type="text" formControlName="LastName">
+        </mat-form-field>
 
-  <label>Email:
-    <input type="text" formControlName="Email">
-  </label>
+        <mat-form-field>
+        <input matInput placeholder="Address" formControlName="Address">
+        </mat-form-field>
 
-  <button type="submit">Save</button>
-</form>
+        <mat-form-field>
+        <input matInput placeholder="Phone Number" formControlName="PhoneNumber">
+        </mat-form-field>
 
-<button routerLink="/pets">Back</button>
+        <mat-form-field>
+       <input matInput placeholder="Email" formControlName="Email">
+        </mat-form-field>
+
+        <button style="position: absolute; right: 15px" mat-raised-button color="primary" type="submit">Save</button>
+      </div>
+
+      </form>
+    </mat-card>
+
+  </div>
+
+<button style="position: absolute; right: 15px" mat-raised-button color="primary" routerLink="/owners">Back</button>
 
 

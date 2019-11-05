@@ -19,7 +19,14 @@ import { OwnerDetailsComponent } from './owners/owner-details/owner-details.comp
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './shared/login/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatListModule, MatProgressSpinnerModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
 import {AuthenticationService} from './shared/services/authentication.service';
 import {AuthGuard} from './authGuard';
 
@@ -48,7 +55,10 @@ import {AuthGuard} from './authGuard';
     BrowserAnimationsModule,
     MatButtonModule,
     MatListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule
   ],
   exports: [
     RouterModule
